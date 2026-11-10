@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Region Bulk Unchecker | Uncheck all 27 EU countries in one go</title>
+  <meta name="description" content="Haven't declared your DSA trader status yet? This Chrome extension unchecks the EU countries on your app publishing console's country list in one go. No network access, no data collection.">
+  <link rel="icon" type="image/png" href="../assets/icon-48.png">
+  <link rel="alternate" hreflang="zh-Hant" href="../">
+  <link rel="alternate" hreflang="en" href="./">
+  <meta property="og:title" content="Region Bulk Unchecker">
+  <meta property="og:description" content="Uncheck all 27 EU countries on your app publishing console in one go.">
+  <meta property="og:image" content="https://region-unchecker.jlab-app.cloud/assets/screenshot-en.png">
+  <meta property="og:url" content="https://region-unchecker.jlab-app.cloud/en/">
+  <link rel="canonical" href="https://region-unchecker.jlab-app.cloud/en/">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="./"><img src="../assets/icon-48.png" alt="" width="32" height="32">Region Bulk Unchecker</a>
+      <div class="links">
+        <a class="hide-sm" href="#how">How it works</a>
+        <a class="hide-sm" href="#faq">FAQ</a>
+        <a href="../" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <h1>27 EU countries.<br>Unchecked in one go.</h1>
+      <p class="lead">Until you have declared your trader status under the EU Digital Services Act (DSA), your app's availability must exclude the EU. This Chrome extension unchecks those countries on your publishing console's country/region list for you.</p>
+      <div class="cta">
+        <a class="button primary" href="#install">Install the extension</a>
+        <a class="button secondary" href="#how">See how it works</a>
+      </div>
+      <img class="shot" src="../assets/screenshot-en.png" width="1280" height="800" alt="Preview result: EU countries outlined in red on the country list, with the extension panel listing the 32 countries to be unchecked">
+    </header>
+  </div>
+
+  <section class="problem">
+    <div class="wrap">
+      <h2>Why you need it</h2>
+      <p>Google Play Console has no "exclude EU" option, and its country availability API is read-only. Every release or region change means searching for a country, unchecking it, then searching for the next one. That's 27 countries plus the French overseas regions, and one slip can leave your app available where it shouldn't be.</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><strong>Open the country/region editor</strong><span>Go to your app's availability editor in Google Play Console or App Store Connect.</span></li>
+        <li><strong>Choose the countries</strong><span>Click the extension icon, pick a list such as "EU member states (27)", or add other names.</span></li>
+        <li><strong>Preview, then uncheck</strong><span>Preview outlines the countries in red. When it looks right, click Uncheck.</span></li>
+        <li><strong>Review and save yourself</strong><span>The extension never clicks Save, so you get a last look before submitting.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Features</h2>
+      <ul class="features">
+        <li>Three built-in lists<span>EU member states (27), French overseas regions (when listed separately) and Mainland China. Mix as you need.</span></li>
+        <li>Extra names<span>One country name per line. Only exact matches count, so "Norway" or a "Select all Europe" box is never touched.</span></li>
+        <li>Preview mode<span>Highlights without clicking, so you can check first.</span></li>
+        <li>Uses the search box<span>Countries not visible on the page are looked up one by one through the page's search box.</span></li>
+        <li>Clear results<span>Lists what was unchecked, what was already unchecked and what was not found. Nothing is skipped silently.</span></li>
+        <li>English and Traditional Chinese<span>Country names cover English plus Taiwan and Hong Kong Chinese spellings.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Privacy</h2>
+      <div class="privacy-box">
+        <p>No network access and no data collection. Your choices stay in your browser, and the extension runs on the current tab only when you click a button. See the <a href="../privacy/">privacy policy</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="wrap">
+      <h2>Install</h2>
+      <details open>
+        <summary>From the Chrome Web Store</summary>
+        <p>The store listing is under review. The link will be added once it is approved.</p>
+      </details>
+      <details>
+        <summary>Manual install (developer mode)</summary>
+        <ol>
+          <li>Download the <a href="../download/region-unchecker.zip">extension zip</a> and unzip it.</li>
+          <li>Open <code>chrome://extensions</code> in Chrome and turn on Developer mode at the top right.</li>
+          <li>Click "Load unpacked" and select the unzipped folder.</li>
+        </ol>
+      </details>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Does it click Save for me?</summary>
+        <p>No. It only unchecks boxes. Saving or submitting is always up to you.</p>
+      </details>
+      <details>
+        <summary>Some countries show as "Not found". What now?</summary>
+        <p>The console probably uses a different name. Paste the name exactly as shown into "Other names", one per line, and run it again.</p>
+      </details>
+      <details>
+        <summary>Does it work on App Store Connect?</summary>
+        <p>Yes. App Store Connect also offers an API for availability, so if you already automate it, the API is more robust.</p>
+      </details>
+      <details>
+        <summary>Will Iceland, Norway, Switzerland or the UK be unchecked?</summary>
+        <p>No. They are not EU members and are not in the default lists. Matching is exact, so similarly named countries are never clicked.</p>
+      </details>
+      <details>
+        <summary>Who decides whether to exclude the EU?</summary>
+        <p>You do. This is an operating tool, not legal advice. Whether you need to declare DSA trader status depends on your situation.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <a href="../privacy/">Privacy policy</a>
+        <a href="../" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+      </div>
+      <p>This extension is not affiliated with or endorsed by Google or Apple. Google Play and App Store Connect are trademarks of their respective owners.</p>
+    </div>
+  </footer>
+</body>
+</html>

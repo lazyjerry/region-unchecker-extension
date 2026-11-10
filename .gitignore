@@ -1,0 +1,20 @@
+dist/
+build/
+
+# macOS
+.DS_Store
+
+# Python（測試與素材腳本）
+__pycache__/
+*.pyc
+
+# Node / Wrangler（deploy-site.sh 以 npx wrangler 部署）
+node_modules/
+.wrangler/
+
+# 本機環境與編輯器
+.env
+.env.*
+.vscode/
+.idea/
+*.log

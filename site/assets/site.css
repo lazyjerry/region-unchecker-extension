@@ -1,0 +1,70 @@
+:root {
+  --ink: #2d2d2d;
+  --muted: #5f5f5f;
+  --accent: #b3261e;
+  --accent-ink: #fff;
+  --bg: #fbf7f6;
+  --card: #fff;
+  --line: #e6dcda;
+  --shadow: 0 10px 30px rgba(45, 45, 45, .12);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #ecebea;
+    --muted: #b4b0ae;
+    --accent: #e0574d;
+    --accent-ink: #1b1b1b;
+    --bg: #1b1a1a;
+    --card: #262424;
+    --line: #3a3636;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .4);
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font: 16px/1.7 system-ui, -apple-system, "PingFang TC", "Noto Sans TC", sans-serif; color: var(--ink); background: var(--bg); }
+a { color: var(--accent); }
+img { max-width: 100%; height: auto; display: block; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 12px; }
+nav .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink); text-decoration: none; }
+nav .brand img { width: 32px; height: 32px; }
+nav .links { display: flex; gap: 16px; font-size: 14px; }
+nav .links a { color: var(--muted); text-decoration: none; }
+nav .links a:hover { color: var(--accent); }
+.hero { padding: 48px 0 32px; text-align: center; }
+.hero h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.25; margin: 0 0 16px; letter-spacing: -.01em; }
+.hero p.lead { font-size: clamp(16px, 2.2vw, 19px); color: var(--muted); max-width: 680px; margin: 0 auto 28px; }
+.cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.button { display: inline-block; padding: 12px 22px; border-radius: 8px; font-weight: 600; text-decoration: none; border: 2px solid var(--accent); }
+.button.primary { background: var(--accent); color: var(--accent-ink); }
+.button.secondary { color: var(--accent); background: transparent; }
+.shot { margin: 40px auto 0; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); max-width: min(960px, 100%); }
+section { padding: 48px 0; }
+section h2 { font-size: clamp(22px, 3.4vw, 30px); margin: 0 0 20px; }
+.problem { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.problem p { max-width: 760px; color: var(--muted); }
+.steps { counter-reset: step; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; padding: 0; list-style: none; }
+.steps li { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+.steps li::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-weight: 700; margin-bottom: 10px; }
+.steps strong { display: block; margin-bottom: 4px; }
+.steps span { color: var(--muted); font-size: 15px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px 28px; padding: 0; list-style: none; }
+.features li { padding-left: 28px; position: relative; }
+.features li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.features li span { display: block; color: var(--muted); font-size: 15px; }
+.privacy-box { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 20px 24px; }
+.privacy-box p { margin: 0; }
+details { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; }
+summary { font-weight: 600; cursor: pointer; }
+details p, details ol { color: var(--muted); margin: 10px 0 0; }
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 14px; color: var(--muted); }
+footer .row { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 10px; }
+.doc { max-width: 760px; padding: 24px 0 48px; }
+.doc h1 { font-size: 30px; margin: 8px 0; }
+.doc h2 { font-size: 22px; margin: 32px 0 8px; }
+.doc .updated { color: var(--muted); font-size: 14px; }
+@media (max-width: 560px) {
+  nav .links a.hide-sm { display: none; }
+  section { padding: 36px 0; }
+}

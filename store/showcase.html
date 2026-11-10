@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Countries / regions</title>
+<style>
+  body { margin: 0; font: 14px/1.4 system-ui, sans-serif; color: #1f1f1f; background: #f4f4f2; }
+  header { background: #2d2d2d; color: #fff; padding: 14px 24px; font-weight: 600; }
+  main { padding: 20px 24px; }
+  h1 { font-size: 20px; margin: 0 0 12px; }
+  .bar { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+  input[type=search] { width: 280px; padding: 8px 10px; border: 1px solid #bbb; border-radius: 6px; font: inherit; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 16px; background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 8px 12px; }
+  .row { display: flex; gap: 8px; align-items: center; padding: 5px 4px; border-bottom: 1px solid #eee; }
+  .row input { width: 16px; height: 16px; accent-color: #2d2d2d; }
+</style>
+</head>
+<body>
+<!-- 商店截圖用的示意後台頁，刻意不模仿任何真實後台的外觀 -->
+<header id="brand"></header>
+<main>
+  <h1 id="title"></h1>
+  <div class="bar"><input type="search" id="search"></div>
+  <div class="grid" id="grid"></div>
+</main>
+<script>
+const zh = new URLSearchParams(location.search).get("lang") !== "en";
+const text = zh
+  ? { brand: "App 發布後台（示意）", title: "國家／地區", search: "搜尋國家／地區" }
+  : { brand: "App publishing console (mock-up)", title: "Countries / regions", search: "Search countries / regions" };
+document.getElementById("brand").textContent = text.brand;
+document.getElementById("title").textContent = text.title;
+document.getElementById("search").placeholder = text.search;
+document.getElementById("search").setAttribute("aria-label", text.search);
+const countries = zh
+  ? "澳洲 奧地利 比利時 巴西 保加利亞 加拿大 克羅埃西亞 賽普勒斯 捷克 丹麥 愛沙尼亞 芬蘭 法國 法屬圭亞那 德國 希臘 瓜地洛普 匈牙利 冰島 愛爾蘭 義大利 日本 拉脫維亞 列支敦斯登 立陶宛 盧森堡 馬爾他 馬丁尼克 馬約特 荷蘭 紐西蘭 挪威 波蘭 葡萄牙 留尼旺 羅馬尼亞 新加坡 斯洛伐克 斯洛維尼亞 南韓 西班牙 瑞典 瑞士 台灣 英國 美國".split(" ")
+  : ["Australia", "Austria", "Belgium", "Brazil", "Bulgaria", "Canada", "Croatia", "Cyprus", "Czechia", "Denmark", "Estonia", "Finland", "France", "French Guiana", "Germany", "Greece", "Guadeloupe", "Hungary", "Iceland", "Ireland", "Italy", "Japan", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Malta", "Martinique", "Mayotte", "Netherlands", "New Zealand", "Norway", "Poland", "Portugal", "Réunion", "Romania", "Singapore", "Slovakia", "Slovenia", "South Korea", "Spain", "Sweden", "Switzerland", "Taiwan", "United Kingdom", "United States"];
+const grid = document.getElementById("grid");
+for (const name of countries) {
+  const row = document.createElement("label");
+  row.className = "row";
+  row.innerHTML = `<input type="checkbox" checked><span></span>`;
+  row.querySelector("span").textContent = name;
+  grid.append(row);
+}
+</script>
+</body>
+</html>

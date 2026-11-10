@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- 128px 圖示依 Chrome 規範四周留 16px 透明邊；小尺寸由 render_assets.py 改 viewBox 裁掉邊界 -->
+  <rect x="16" y="16" width="96" height="96" rx="20" fill="#b3261e"/>
+  <g fill="none" stroke="#fff" stroke-width="6">
+    <circle cx="58" cy="58" r="27"/>
+    <ellipse cx="58" cy="58" rx="11" ry="27"/>
+    <line x1="31" y1="58" x2="85" y2="58"/>
+  </g>
+  <rect x="68" y="68" width="36" height="36" rx="7" fill="#fff"/>
+  <line x1="77" y1="86" x2="95" y2="86" stroke="#b3261e" stroke-width="6" stroke-linecap="round"/>
+</svg>

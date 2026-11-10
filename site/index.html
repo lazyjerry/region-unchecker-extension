@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>上架地區批次取消｜一次取消歐盟 27 國的 Chrome 擴充套件</title>
+  <meta name="description" content="還沒申報 DSA 交易者身分，就得在 App 發布後台一國一國取消歐盟國家？這個 Chrome 擴充套件一次幫你取消勾選，不連網、不收集資料。">
+  <link rel="icon" type="image/png" href="assets/icon-48.png">
+  <link rel="alternate" hreflang="zh-Hant" href="./">
+  <link rel="alternate" hreflang="en" href="en/">
+  <meta property="og:title" content="上架地區批次取消">
+  <meta property="og:description" content="在 App 發布後台一次取消勾選歐盟 27 國，不必逐一搜尋。">
+  <meta property="og:image" content="https://region-unchecker.jlab-app.cloud/assets/screenshot-zh_TW.png">
+  <meta property="og:url" content="https://region-unchecker.jlab-app.cloud/">
+  <link rel="canonical" href="https://region-unchecker.jlab-app.cloud/">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="./"><img src="assets/icon-48.png" alt="" width="32" height="32">上架地區批次取消</a>
+      <div class="links">
+        <a class="hide-sm" href="#how">使用方式</a>
+        <a class="hide-sm" href="#faq">常見問題</a>
+        <a href="en/" hreflang="en" lang="en">English</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <h1>歐盟 27 國，<br>不用再一國一國取消</h1>
+      <p class="lead">還沒申報歐盟《數位服務法》（DSA）交易者身分時，App 的上架地區要排除歐盟國家。這個 Chrome 擴充套件在發布後台的國家／地區清單上，一次幫你取消勾選。</p>
+      <div class="cta">
+        <a class="button primary" href="#install">安裝擴充套件</a>
+        <a class="button secondary" href="#how">看怎麼用</a>
+      </div>
+      <img class="shot" src="assets/screenshot-zh_TW.png" width="1280" height="800" alt="擴充套件預覽結果：國家清單中的歐盟國家以紅框標示，右側面板列出會取消的 32 個國家">
+    </header>
+  </div>
+
+  <section class="problem">
+    <div class="wrap">
+      <h2>為什麼需要它</h2>
+      <p>Google Play Console 沒有「排除歐盟」的選項，國家可用性也沒有能寫入的 API。每次上架或調整地區，都得在清單裡搜尋一個國家、取消、再搜尋下一個，27 國加上法國海外省，點錯一個就可能讓 App 在不該上架的地區出現。</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>使用方式</h2>
+      <ol class="steps">
+        <li><strong>打開國家／地區編輯畫面</strong><span>在 Google Play Console 或 App Store Connect 進入上架地區的編輯頁。</span></li>
+        <li><strong>選擇要取消的國家</strong><span>按工具列的套件圖示，勾選「歐盟 27 國」等清單，或補上其他國家名稱。</span></li>
+        <li><strong>先預覽，再取消</strong><span>預覽會用紅框標示將被取消的國家；確認後按「取消勾選」。</span></li>
+        <li><strong>自己檢查並儲存</strong><span>套件不會替你按儲存，送出前可以再看一次。</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>功能</h2>
+      <ul class="features">
+        <li>內建三組國家清單<span>歐盟 27 國、法國海外省（後台分開列出時）、中國大陸，可自由組合。</span></li>
+        <li>補充其他名稱<span>一行一個國家名稱，完全相同才算命中，不會誤點「挪威」或「全選歐洲」。</span></li>
+        <li>預覽模式<span>先標示、不點擊，看清楚再動手。</span></li>
+        <li>自動用搜尋框找<span>清單上看不到的國家，會逐一輸入搜尋框找出來再取消。</span></li>
+        <li>結果一目瞭然<span>列出已取消、原本就沒勾、找不到的國家，不會靜默略過。</span></li>
+        <li>中英雙語介面<span>國家名稱涵蓋台灣與香港譯名，以及英文名稱。</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>隱私</h2>
+      <div class="privacy-box">
+        <p>不連網、不收集任何資料。你的選擇只存在瀏覽器本機，套件只在你按下按鈕時對目前分頁執行。詳見<a href="privacy/">隱私權政策</a>。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="wrap">
+      <h2>安裝</h2>
+      <details open>
+        <summary>從 Chrome 線上應用程式商店安裝</summary>
+        <p>商店頁面審核中，通過後會放上連結。</p>
+      </details>
+      <details>
+        <summary>手動安裝（開發人員模式）</summary>
+        <ol>
+          <li>下載<a href="download/region-unchecker.zip">擴充套件 zip 檔</a>並解壓縮。</li>
+          <li>Chrome 開啟 <code>chrome://extensions</code>，打開右上角「開發人員模式」。</li>
+          <li>按「載入未封裝項目」，選擇解壓縮後的資料夾。</li>
+        </ol>
+      </details>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>常見問題</h2>
+      <details>
+        <summary>會替我按「儲存」嗎？</summary>
+        <p>不會。套件只取消勾選，儲存或送出一律由你自己確認後操作。</p>
+      </details>
+      <details>
+        <summary>結果顯示「找不到」怎麼辦？</summary>
+        <p>多半是後台使用的譯名不同。把後台顯示的國家名稱貼到「其他名稱」欄，一行一個，再執行一次。</p>
+      </details>
+      <details>
+        <summary>App Store Connect 也能用嗎？</summary>
+        <p>可以。不過 App Store Connect 的上架地區另有 API 可設定，若你已有自動化腳本，用 API 會更穩定。</p>
+      </details>
+      <details>
+        <summary>冰島、挪威、瑞士、英國會被取消嗎？</summary>
+        <p>不會。它們不是歐盟會員國，預設清單不包含。比對採完全相同的名稱，也不會誤點相似名稱的國家。</p>
+      </details>
+      <details>
+        <summary>要不要排除歐盟，是誰決定的？</summary>
+        <p>由你決定。本套件只是操作工具，不提供法律意見；是否需要申報 DSA 交易者身分，請依你的情況判斷。</p>
+      </details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <a href="privacy/">隱私權政策</a>
+        <a href="en/" hreflang="en" lang="en">English</a>
+      </div>
+      <p>本套件與 Google、Apple 無關，也未經其認可。Google Play 與 App Store Connect 為各自所有者的商標。</p>
+    </div>
+  </footer>
+</body>
+</html>

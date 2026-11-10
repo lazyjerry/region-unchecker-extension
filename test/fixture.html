@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>fixture</title></head>
+<body>
+<!-- 模擬後台：群組全選、表格列、自訂 role=checkbox、只在搜尋時才渲染的項目 -->
+<div id="group">
+  <label><input type="checkbox" id="all-europe" checked> 歐洲</label>
+  <table><tbody id="rows"></tbody></table>
+</div>
+<div id="custom"></div>
+<input type="search" aria-label="搜尋國家/地區" id="search">
+<ul id="filtered"></ul>
+<script>
+const rows = [["奧地利", true], ["比利時", false], ["法國 (FR)", true], ["挪威", true], ["Netherlands Antilles", true], ["德國", true]];
+for (const [name, on] of rows) {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td><input type="checkbox" ${on ? "checked" : ""}></td><td>${name}</td><td>歐洲</td>`;
+  document.getElementById("rows").append(tr);
+}
+for (const name of ["Spain", "Liechtenstein"]) {
+  const div = document.createElement("div");
+  div.innerHTML = `<span role="checkbox" aria-checked="true" tabindex="0"></span><span>${name}</span>`;
+  const box = div.firstElementChild;
+  box.addEventListener("click", () => box.setAttribute("aria-checked", box.getAttribute("aria-checked") === "true" ? "false" : "true"));
+  document.getElementById("custom").append(div);
+}
+// 瑞典、留尼旺只在搜尋符合時才出現，狀態要跨渲染保留
+const hidden = { "瑞典": true, "留尼汪": true };
+const search = document.getElementById("search");
+search.addEventListener("input", () => {
+  const list = document.getElementById("filtered");
+  list.innerHTML = "";
+  if (!search.value) return;
+  setTimeout(() => {
+    for (const name of Object.keys(hidden).filter((n) => n.includes(search.value))) {
+      const li = document.createElement("li");
+      li.innerHTML = `<label><input type="checkbox" ${hidden[name] ? "checked" : ""}> ${name}</label>`;
+      li.querySelector("input").addEventListener("change", (e) => { hidden[name] = e.target.checked; });
+      list.append(li);
+    }
+  }, 300);
+});
+window.__hidden = hidden;
+</script>
+</body></html>
